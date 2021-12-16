@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.19)
 
 project(logging VERSION 1.0 DESCRIPTION logging LANGUAGES CXX)
 
-add_library(logging OBJECT src/logging.cpp)
+add_library(logging OBJECT src/logging.cpp include/logger_ostream.h)
 
 # install stuff
 target_include_directories(logging INTERFACE 

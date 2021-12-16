@@ -19,9 +19,10 @@ namespace logging
 
 	class cout_transporter : public transporter
 	{
+        std::ostream _cout;
 	public:
-        cout_transporter() = default;
-		inline void log(const std::string& str) override { std::cout << str << std::flush; }
+        inline cout_transporter() : _cout(std::cout.rdbuf()) {};
+		inline void log(const std::string& str) override { _cout << str << std::flush; }
 		~cout_transporter() override = default;
 	};
 
