@@ -12,4 +12,4 @@ int main()
   logging::logger::get_instance().info("Foo");
 }
 ```
-This is a pretty simple logging setup, and will print "Foo" to stdout. See [https://github.com/FloweyTheFlower420/loggerpp/wiki/Advanced-Usage](here) for details on what is going on.
+This is a pretty simple logging setup, and will print "Foo" to stdout. See [here](https://github.com/FloweyTheFlower420/loggerpp/wiki/Advanced-Usage) for details on what is going on.
