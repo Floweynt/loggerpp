@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.19)
 
 project(logging VERSION 1.0 DESCRIPTION logging LANGUAGES CXX)
 
-add_library(logging INTERFACE)
+add_library(logging OBJECT src/logging.cpp)
 
 # install stuff
 target_include_directories(logging INTERFACE 
@@ -49,7 +49,7 @@ target_link_libraries(logging INTERFACE stacktrace)
 set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_GLIBCXX_DEBUG")
 
 add_executable(logging-test "${PROJECT_SOURCE_DIR}/examples/main.cpp")
-add_dependencies(logging-test stacktrace)
+add_dependencies(logging-test logging)
 
 include_directories("${PROJECT_BINARY_DIR}/include/")
 include_directories("${PROJECT_SOURCE_DIR}/include/")
