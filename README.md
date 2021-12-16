@@ -1,5 +1,5 @@
 # loggerpp
-C++ logging system, header only (with overused inline specifiers!)
+C++ logging system  
 Simple configurable C++ logging system
 # Features
 Logging things!
