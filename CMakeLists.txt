@@ -42,7 +42,7 @@ install(FILES "${PROJECT_BINARY_DIR}/logging-config-version.cmake" "${PROJECT_BI
     DESTINATION lib/cmake/logging
 )
 
-find_package(stacktrace CONFIG REQUIRED)
+find_package(stacktrace 1.1 CONFIG REQUIRED)
 target_link_libraries(logging INTERFACE stacktrace)
 
 # test

@@ -63,7 +63,7 @@ namespace logging
         return *this;
     }
 
-    logger& logger::nlog(logger::level l, const std::string& name, const std::string& str, const stacktrace::stack_aware_exception& e)
+    logger& logger::nlog(logger::level l, const std::string& name, const std::string& str, const stacktrace::stacktrace_exception& e)
     {
         std::ostringstream ss;
         if(!str.empty())
