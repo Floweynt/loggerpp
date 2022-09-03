@@ -2,7 +2,7 @@
 
 namespace logging
 {
-    inline logger& logger::nlog(logger::level l, const std::string& name, const std::string& buf)
+    logger& logger::nlog(logger::level l, const std::string& name, const std::string& buf)
     {
         using namespace std::literals::string_literals;
         std::string out_color = "["s + name + "]: "s + buf + '\n';
@@ -63,16 +63,6 @@ namespace logging
         return *this;
     }
 
-    logger& logger::nlog(logger::level l, const std::string& name, const std::string& str, const stacktrace::stacktrace_exception& e)
-    {
-        std::ostringstream ss;
-        if(!str.empty())
-            ss << str << '\n' << stacktrace::stacktrace << e;
-        else
-            ss << stacktrace::stacktrace << e;
-        return nlog(l, name, ss.str());
-    }
-
     int str_to_level(const std::string& str)
     {
         if(str.size() < 4 || str.size() > 5)
@@ -116,5 +106,7 @@ namespace logging
             case logger::FATAL:
                 return "FATAL";
         };
+
+        return "";
     }
 }

@@ -27,8 +27,10 @@ namespace logging
 
         inline int sync() override
         {
-            ref.log(level, buf);
+            if(buf.size())
+                ref.log(level, buf);
             buf.clear();
+            return 0;
         }
     };
 
