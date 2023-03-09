@@ -38,6 +38,7 @@ namespace logging
 
     class logger
     {
+        std::mutex lock;
     public:
         enum level
         {
